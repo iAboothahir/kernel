@@ -119,3 +119,6 @@ android/configs/android-*.cfg
 
 # ignore out folder
 out
+
+# Huaqin, stop being retard by doing all kernel stuffs on Windows
+!.gitattributes
