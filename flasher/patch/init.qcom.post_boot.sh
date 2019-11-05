@@ -2388,12 +2388,14 @@ case "$target" in
             echo 50000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
             echo 30000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
             echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable
+            echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/alt_freq_eq
                        
             # configure governor for Big cluster
             echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
             echo 50000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
             echo 30000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
             echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable
+            echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/alt_freq_eq
 
             # bring all cores online
             echo 1 > /sys/devices/system/cpu/cpu0/online
