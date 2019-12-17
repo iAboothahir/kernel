@@ -3446,7 +3446,7 @@ void asus_batt_RTC_work(struct work_struct *dat)
 #define ICL_1425mA	0x39
 #define ICL_1500mA	0x3C
 #define ICL_1900mA	0x4C
-#define ICL_2000mA	0x50
+#define ICL_2050mA	0x52
 #define ICL_2850mA	0x72
 #define ICL_3000mA	0x78
 #define ASUS_MONITOR_CYCLE	60000
@@ -3779,7 +3779,7 @@ void jeita_rule(void)
 		charging_enable = EN_BAT_CHG_EN_COMMAND_TRUE;
 
 		/* reg=1070 */
-		FV_CFG_reg_value = SMBCHG_FLOAT_VOLTAGE_VALUE_4P350;
+		FV_CFG_reg_value = SMBCHG_FLOAT_VOLTAGE_VALUE_4P357;
 
 		/* reg=1061 */
 		FCC_reg_value = SMBCHG_FAST_CHG_CURRENT_VALUE_1400MA;
@@ -3794,10 +3794,10 @@ void jeita_rule(void)
 		charging_enable = EN_BAT_CHG_EN_COMMAND_TRUE;
 
 		/* reg=1070 */
-		FV_CFG_reg_value = SMBCHG_FLOAT_VOLTAGE_VALUE_4P350;
+		FV_CFG_reg_value = SMBCHG_FLOAT_VOLTAGE_VALUE_4P357;
 
 		/* reg=1061 */
-		FCC_reg_value = SMBCHG_FAST_CHG_CURRENT_VALUE_2000MA;
+		FCC_reg_value = SMBCHG_FAST_CHG_CURRENT_VALUE_2050MA;
 
 		rc = SW_recharge(smbchg_dev);
 		if (rc < 0)
@@ -3808,7 +3808,7 @@ void jeita_rule(void)
 	case JEITA_STATE_RANGE_500_to_600:
 		charging_enable = EN_BAT_CHG_EN_COMMAND_TRUE;
 		FV_CFG_reg_value = SMBCHG_FLOAT_VOLTAGE_VALUE_4P004;
-		FCC_reg_value = SMBCHG_FAST_CHG_CURRENT_VALUE_2000MA;
+		FCC_reg_value = SMBCHG_FAST_CHG_CURRENT_VALUE_2050MA;
 		break;
 	case JEITA_STATE_LARGER_THAN_600:
 		charging_enable = EN_BAT_CHG_EN_COMMAND_FALSE;
@@ -4108,21 +4108,21 @@ void asus_adapter_adc_work(struct work_struct *work)
 	/* determine current-setting value for DCP type AC: */
 	switch (ASUS_ADAPTER_ID) {
 	case ASUS_750K:
-		usb_max_current = ICL_2000mA;
+		usb_max_current = ICL_2050mA;
 		break;
 
 	case ASUS_200K:
-		usb_max_current = ICL_2000mA;
+		usb_max_current = ICL_2050mA;
 		break;
 
 	case PB:
-		usb_max_current = ICL_2000mA;
+		usb_max_current = ICL_2050mA;
 		break;
 
 	case OTHERS:
 		if (BR_countrycode == COUNTRY_BR ||
 			BR_countrycode == COUNTRY_IN)
-			usb_max_current = ICL_2000mA;
+			usb_max_current = ICL_2050mA;
 		else
 			usb_max_current = ICL_1000mA;
 
