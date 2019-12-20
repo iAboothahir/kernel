@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build_asus:
+    docker:
+      - image: ubuntu:latest
+    working_directory: /root/build_asus
+    steps:
+      - run: apt-get update
+      - run: apt-get -y install git
+      - run: git clone https://github.com/ajaivasudeve/kernel --depth=1 -b asus .
+      - run: bash build.sh
+
+workflows:
+  version: 2
+  asus_build:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 0"
+          filters:
+            branches:
+              only:
+                - asus    
+    jobs:
+      - build_asus
