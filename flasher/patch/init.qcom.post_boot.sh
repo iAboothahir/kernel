@@ -2364,7 +2364,18 @@ case "$target" in
             # setup cpu-boost
             echo "0:633600 4:1113600" > /sys/module/cpu_boost/parameters/input_boost_freq
             echo "1" > /sys/module/cpu_boost/parameters/input_boost_enabled
+            echo "1" > /sys/module/cpu_boost/parameters/max_boost_enabled
+            echo "1" > /sys/module/cpu_boost/parameters/mdss_boost_enabled
+            echo "1" > /sys/module/cpu_boost/parameters/smart_boost_enabled
+            echo "1" > /sys/module/cpu_boost/parameters/dsb_enabled
             echo "150" > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "7" > /sys/module/cpu_boost/parameters/sb_damp_factor
+            echo "633600" > /sys/module/cpu_boost/parameters/input_boost_freq_l
+            echo "1113600" > /sys/module/cpu_boost/parameters/input_boost_freq_b
+            echo "850" > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ta
+            echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_fg
+            echo "850" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
             
             # disable thermal bcl hotplug
             echo 0 > /sys/module/msm_thermal/core_control/enabled
