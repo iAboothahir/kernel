@@ -32,15 +32,6 @@ clean(){
 	make $args mrproper
 }
 
-# Patch for sar
-function patch() {
-    curl -s https://github.com/ajaivasudeve/kernel/commit/ba15abc8b6bd23082bbe198b0d71a6105e50bfa4.patch | git am
-    curl -s https://github.com/ajaivasudeve/kernel/commit/94f59a09747fa17ff9a0a5101d80fe0754ffa7fd.patch | git am
-    curl -s https://github.com/ajaivasudeve/kernel/commit/dfacf93f9ad139083b2b4b9a91668d3f87e899a0.patch | git am
-    curl -s https://github.com/ajaivasudeve/kernel/commit/3553f73bb7f180b5ab4fecd9b385bf1a762da63a.patch | git am
-    curl -s https://github.com/ajaivasudeve/kernel/commit/dcea49756e2ca27c9316e97b1ede9f455335ee38.patch | git am
-}
-
 build_X00T(){
 	export KBUILD_BUILD_USER="ajaivasudeve"
 	export KBUILD_BUILD_HOST="slowpoke"
@@ -101,12 +92,5 @@ terminate(){
 	time="$(date +"%H-%M-%S")"
 	type="non-sar"
 	build_X00T
-
-    patch
-
-	date="$(date +"%d-%m-%Y")"
-	time="$(date +"%H-%M-%S")"
-	type="sar"
-	build_X00T
-
+	
 # build end	
