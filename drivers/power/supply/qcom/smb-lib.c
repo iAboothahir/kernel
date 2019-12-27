@@ -3925,7 +3925,7 @@ void asus_chg_flow_work(struct work_struct *work)
 				__func__);
 
 		/* reg=1370 bit7-bit0 */
-		set_icl = ICL_2050mA;
+		set_icl = ICL_1000mA;
 
 		rc = smblib_masked_write(smbchg_dev,
 						USBIN_CURRENT_LIMIT_CFG_REG,
@@ -3934,7 +3934,24 @@ void asus_chg_flow_work(struct work_struct *work)
 		if (rc < 0)
 			pr_err("%s: Failed to set USBIN_CURRENT_LIMIT\n",
 				__func__);
-		
+
+		/* reg=1370 */
+		rc = smblib_read(smbchg_dev, USBIN_CURRENT_LIMIT_CFG_REG,
+					&USBIN_1_cc);
+		if (rc < 0)
+			pr_err("%s: Couldn't read fast_CURRENT_LIMIT_CFG_REG\n",
+				__func__);
+
+		/* USB DPDM Switch to ADC (2D) */
+		rc = gpio_direction_output(global_gpio->ADC_SW_EN, 1);
+		if (!rc)
+			pr_debug("%s: Pull high USBSW_S\n", __func__);
+		else {
+			pr_err("%s: failed to pull-high ADC_SW_EN-gpios59\n",
+				__func__);
+			break;
+		}
+
 		schedule_delayed_work(&smbchg_dev->asus_adapter_adc_work,
 					msecs_to_jiffies(15000));
 		break;
