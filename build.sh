@@ -47,7 +47,7 @@ build_X00T(){
 mkzip (){
 	END=$(date +"%s")
 	KDURATION=`expr $END - $START`
-	zipname="[${1}-${type}]-droopy-kernel-$date-$time.zip"
+	zipname="${1}-${type}-droopy-kernel-$date-$time.zip"
 	duration="`expr $KDURATION / 60`m `expr $KDURATION % 60`s"
 	cp -f out/arch/arm64/boot/Image.gz-dtb flasher
 	cd flasher
