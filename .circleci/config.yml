@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: apt-get update
       - run: apt-get -y install git
-      - run: git clone https://github.com/ajaivasudeve/kernel --depth=1 -b asus .
+      - run: git clone https://github.com/ajaivasudeve/kernel -b asus .
       - run: bash build.sh
 
   build_weekly:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - run: apt-get update
       - run: apt-get -y install git
-      - run: git clone https://github.com/ajaivasudeve/kernel --depth=1 -b asus .
+      - run: git clone https://github.com/ajaivasudeve/kernel -b asus .
       - run: bash build.sh
 
 workflows:
