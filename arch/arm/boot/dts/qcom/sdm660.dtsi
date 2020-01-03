@@ -1293,9 +1293,11 @@
 		qcom,cpulist = <&CPU0 &CPU1 &CPU2 &CPU3>;
 		qcom,target-dev = <&memlat_cpu0>;
 		qcom,core-dev-table =
-			< 902400 762 >,
-			< 1401600 2086 >,
-			< 1881600 3879 >;
+			<  633600  762 >,
+			<  902400 2086 >,
+			< 1113600 2929 >,
+			< 1401600 3879 >,
+			< 1612800 5163 >;
 	};
 
 	devfreq_memlat_4: qcom,arm-memlat-mon-4 {
@@ -1303,10 +1305,12 @@
 		qcom,cpulist = <&CPU4 &CPU5 &CPU6 &CPU7>;
 		qcom,target-dev = <&memlat_cpu4>;
 		qcom,core-dev-table =
-			< 1113600 762 >,
+			<  633600  762 >,
+			<  902400 2086 >,
+			< 1113600 2929 >,
 			< 1401600 3879 >,
-			< 2150400 5931 >,
-			< 2457600 6881 >;
+			< 1747200 5931 >,
+			< 1804800 6881 >;
 	};
 
 	devfreq_cpufreq: devfreq-cpufreq {
