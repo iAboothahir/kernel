@@ -492,8 +492,8 @@ static irqreturn_t gf_irq(int irq, void *handle)
 {
 #if defined(GF_NETLINK_ENABLE)
 	char temp = GF_NET_EVENT_IRQ;
-	input_boost_max_kick(1000);
-	devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 1000);
+	input_boost_max_kick(2000);
+	devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 2000);
 	wake_lock_timeout(&fp_wakelock, msecs_to_jiffies(WAKELOCK_HOLD_TIME));
 	sendnlmsg(&temp);
 #elif defined (GF_FASYNC)
