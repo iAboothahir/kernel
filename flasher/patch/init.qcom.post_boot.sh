@@ -2306,11 +2306,9 @@ case "$target" in
             echo "1" > /sys/module/cpu_boost/parameters/input_boost_enabled
             echo "0" > /sys/module/cpu_boost/parameters/max_boost_enabled
             echo "1" > /sys/module/cpu_boost/parameters/mdss_boost_enabled
-            echo "1" > /sys/module/cpu_boost/parameters/smart_boost_enabled
             echo "1" > /sys/module/cpu_boost/parameters/dsb_enabled
             echo "633600" > /sys/module/cpu_boost/parameters/input_boost_freq_l
             echo "1113600" > /sys/module/cpu_boost/parameters/input_boost_freq_b
-            echo "10" > /sys/module/cpu_boost/parameters/sb_damp_factor
             echo "850" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
             echo "850" > /sys/module/cpu_boost/parameters/input_boost_ms
             echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ta
