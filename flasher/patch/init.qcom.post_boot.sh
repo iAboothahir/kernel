@@ -2389,7 +2389,7 @@ case "$target" in
                 echo 0 > $cpubw/bw_hwmon/guard_band_mbps
                 echo 250 > $cpubw/bw_hwmon/up_scale
 				echo 1600 > $cpubw/bw_hwmon/idle_mbps
-                echo 381 > $cpubw/bw_hwmon/screen_off_max_freq
+                echo 762 > $cpubw/bw_hwmon/screen_off_max_freq
             done
 
             for memlat in /sys/class/devfreq/*qcom,memlat-cpu*
