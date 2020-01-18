@@ -297,8 +297,8 @@ function configure_memory_parameters() {
     set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
     echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
 
-    # Enable adaptive LMK for all targets &
-    echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+    # Disable adaptive LMK for all targets &
+    echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 
     # set parameters according to RAM size
     echo "5120,10240,20480,25600,33280,40960" > /sys/module/lowmemorykiller/parameters/minfree
