@@ -301,8 +301,8 @@ function configure_memory_parameters() {
     echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 
     # set parameters according to RAM size
-    echo "5120,10240,20480,25600,33280,40960" > /sys/module/lowmemorykiller/parameters/minfree
-    echo 40960 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+    echo "6400,12800,21760,38400,51200,89600" > /sys/module/lowmemorykiller/parameters/minfree
+    echo 89600 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
     if [ $MemTotal -le 3145728 ]; then
         echo 60 > /proc/sys/vm/swappiness
