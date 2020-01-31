@@ -2309,8 +2309,8 @@ case "$target" in
             echo "1" > /sys/module/cpu_boost/parameters/dsb_enabled
             echo "633600" > /sys/module/cpu_boost/parameters/input_boost_freq_l
             echo "1113600" > /sys/module/cpu_boost/parameters/input_boost_freq_b
-            echo "850" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
-            echo "850" > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "150" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
+            echo "150" > /sys/module/cpu_boost/parameters/input_boost_ms
             echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ta
             echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_fg
             
