@@ -57,6 +57,7 @@
 	qcom,float-option = <1>;
 	qcom,auto-recharge-soc;
 	qcom,pm-gpio3-vadc = <&pm660_vadc>;	
+	qcom,hvdcp-disable;
 };
 
 &pm660_pdphy {
