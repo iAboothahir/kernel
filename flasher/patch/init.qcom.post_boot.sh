@@ -2312,7 +2312,7 @@ case "$target" in
             echo "150" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
             echo "150" > /sys/module/cpu_boost/parameters/input_boost_ms
             echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ta
-            echo "0" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_fg
+            echo "1" > /sys/module/cpu_boost/parameters/dynamic_stune_boost_fg
             
             # disable thermal bcl hotplug
             echo 0 > /sys/module/msm_thermal/core_control/enabled
