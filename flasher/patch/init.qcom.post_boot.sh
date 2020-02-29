@@ -2304,7 +2304,7 @@ case "$target" in
 
             # setup cpu-boost
             echo "1" > /sys/module/cpu_boost/parameters/input_boost_enabled
-            echo "0" > /sys/module/cpu_boost/parameters/max_boost_enabled
+            echo "1" > /sys/module/cpu_boost/parameters/max_boost_enabled
             echo "1" > /sys/module/cpu_boost/parameters/mdss_boost_enabled
             echo "1" > /sys/module/cpu_boost/parameters/dsb_enabled
             echo "633600" > /sys/module/cpu_boost/parameters/input_boost_freq_l
