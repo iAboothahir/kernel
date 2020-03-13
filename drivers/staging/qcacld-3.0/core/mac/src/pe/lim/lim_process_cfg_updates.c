@@ -155,7 +155,7 @@ void lim_handle_param_update(tpAniSirGlobal pMac, eUpdateIEsType cfgId)
 		msg.type = SIR_LIM_UPDATE_BEACON;
 		status = lim_post_msg_api(pMac, &msg);
 
-		if (status != TX_SUCCESS)
+			if (status != TX_SUCCESS)
 			pe_err("Failed lim_post_msg_api %u", status);
 			break;
 	}
@@ -234,7 +234,7 @@ void lim_handle_cf_gparam_update(tpAniSirGlobal pMac, uint32_t cfgId)
 
 		status = lim_post_msg_api(pMac, &msg);
 
-		if (status != TX_SUCCESS)
+			if (status != TX_SUCCESS)
 			pe_err("Failed lim_post_msg_api %u", status);
 			break;
 	}
@@ -253,7 +253,7 @@ void lim_handle_cf_gparam_update(tpAniSirGlobal pMac, uint32_t cfgId)
 		val16 = (uint16_t) val1;
 		pAmpduParamInfo = (tSirMacHTParametersInfo *) &val16;
 		pAmpduParamInfo->mpduDensity = (uint8_t) val2;
-		if (cfg_set_int
+			if (cfg_set_int
 			    (pMac, WNI_CFG_HT_AMPDU_PARAMS,
 			    *(uint8_t *) pAmpduParamInfo) != eSIR_SUCCESS)
 			pe_err("could not update HT AMPDU Param CFG");
@@ -272,7 +272,7 @@ void lim_handle_cf_gparam_update(tpAniSirGlobal pMac, uint32_t cfgId)
 		val16 = (uint16_t) val1;
 		pAmpduParamInfo = (tSirMacHTParametersInfo *) &val16;
 		pAmpduParamInfo->maxRxAMPDUFactor = (uint8_t) val2;
-		if (cfg_set_int
+			if (cfg_set_int
 			    (pMac, WNI_CFG_HT_AMPDU_PARAMS,
 			    *(uint8_t *) pAmpduParamInfo) != eSIR_SUCCESS)
 			pe_err("could not update HT AMPDU Param CFG");

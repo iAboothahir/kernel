@@ -151,7 +151,7 @@ static void do_input_boost_rem(struct work_struct *work)
 }
 
 #ifdef CONFIG_DYNAMIC_STUNE_BOOST
-static void _do_dsb()
+static void _do_dsb(void)
 {
 	int ret, err;
 
