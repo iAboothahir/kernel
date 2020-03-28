@@ -63,7 +63,7 @@ enum pon_restart_reason {
 	PON_RESTART_REASON_KEYS_CLEAR		= 0x06,
 #ifdef CONFIG_MACH_ASUS_X00T
 	PON_RESTART_REASON_ASUS_UNLOCK		= 0x08,
-#endif	
+#endif
 
 	/* 32 ~ 63 for OEMs/ODMs secific features */
 	PON_RESTART_REASON_OEM_MIN		= 0x20,
